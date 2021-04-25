@@ -15,6 +15,8 @@ AMyActorBase::AMyActorBase()
 void AMyActorBase::BeginPlay()
 {
 	Super::BeginPlay();
+
+	
 	
 }
 
