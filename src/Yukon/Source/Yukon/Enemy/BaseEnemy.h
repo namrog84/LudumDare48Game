@@ -30,15 +30,15 @@ public:
     void FireDelegate();
 
     // Components
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite)
     USceneComponent* m_scene = nullptr;
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite)
     UArrowComponent* m_arrow = nullptr;
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite)
     UStaticMeshComponent* m_sphereComponent = nullptr;
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite)
     USphereComponent* m_sphereComponent1 = nullptr;
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite)
     USphereComponent* m_sphereComponent2 = nullptr;
 
     FTimeline m_timeLine;

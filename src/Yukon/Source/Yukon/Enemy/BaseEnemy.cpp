@@ -4,6 +4,8 @@
 
 #include "Components/CapsuleComponent.h"
 #include "Components/TimelineComponent.h"
+#include "Components/SceneComponent.h"
+#include "Components/ArrowComponent.h"
 #include "EnemyBullet.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -16,6 +18,18 @@ ABaseEnemy::ABaseEnemy()
 {
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
+    // USceneComponent*
+    m_scene = CreateDefaultSubobject<USceneComponent>("m_scene");
+    m_scene->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+
+    m_arrow = CreateDefaultSubobject<UArrowComponent>("m_arrow");
+    m_arrow->AttachToComponent(m_scene, FAttachmentTransformRules::KeepRelativeTransform);
+    m_sphereComponent = CreateDefaultSubobject<UStaticMeshComponent>("m_sphereComponent");
+    m_sphereComponent->AttachToComponent(m_scene, FAttachmentTransformRules::KeepRelativeTransform);
+    m_sphereComponent1 = CreateDefaultSubobject<USphereComponent>("m_sphereComponent1");
+    m_sphereComponent1->AttachToComponent(m_sphereComponent, FAttachmentTransformRules::KeepRelativeTransform);
+    m_sphereComponent2 = CreateDefaultSubobject<USphereComponent>("m_sphereComponent2");
+    m_sphereComponent2->AttachToComponent(m_sphereComponent, FAttachmentTransformRules::KeepRelativeTransform);
 }
 
 // Called when the game starts or when spawned

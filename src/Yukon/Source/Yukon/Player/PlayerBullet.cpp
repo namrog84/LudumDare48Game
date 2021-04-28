@@ -41,9 +41,9 @@ void APlayerBullet::NotifyHit(
         {
             if (Cast<ABaseEnemy>(Other) || Cast<ABigEnemy>(Other))
             {
-                Other->TakeDamage(1, FDamageEvent(), GetInstigatorController(), this);
-                Destroy();
+                Other->TakeDamage(1, FDamageEvent{}, nullptr, nullptr);
             }
+            Destroy();
         }
     }
 }
