@@ -1,31 +1,25 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "MyActorWhatever.h"
-
-#include "Kismet/KismetArrayLibrary.h"
+#include "EnemyBullet.h"
 
 // Sets default values
-AMyActorWhatever::AMyActorWhatever()
+AEnemyBullet::AEnemyBullet()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 }
 
 // Called when the game starts or when spawned
-void AMyActorWhatever::BeginPlay()
+void AEnemyBullet::BeginPlay()
 {
 	Super::BeginPlay();
-
-
-	
-
 	
 }
 
 // Called every frame
-void AMyActorWhatever::Tick(float DeltaTime)
+void AEnemyBullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 

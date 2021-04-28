@@ -1,31 +1,25 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "MyActorWhatever.h"
-
-#include "Kismet/KismetArrayLibrary.h"
+#include "IceAsteroid.h"
 
 // Sets default values
-AMyActorWhatever::AMyActorWhatever()
+AIceAsteroid::AIceAsteroid()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 }
 
 // Called when the game starts or when spawned
-void AMyActorWhatever::BeginPlay()
+void AIceAsteroid::BeginPlay()
 {
 	Super::BeginPlay();
-
-
-	
-
 	
 }
 
 // Called every frame
-void AMyActorWhatever::Tick(float DeltaTime)
+void AIceAsteroid::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
