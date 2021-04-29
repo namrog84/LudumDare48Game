@@ -50,14 +50,14 @@ void AAsteroidSpawner::BeginPlay()
                 UKismetMathLibrary::RandomFloatInRange(0, 360));
             FVector scale = FVector(UKismetMathLibrary::RandomFloatInRange(m_scaleMin, m_scaleMax));
 
-            FTransform spawnTransform(rotation, location, scale);
+            // FTransform spawnTransform(rotation, location, scale);
             // auto pActor = GetWorld()->SpawnActor<AActor>(m_spawnClass, spawnTransform);
 
-            // auto pActor = GetWorld()->SpawnActor<AActor>(m_spawnClass, location, rotation);
-            // pActor->SetActorScale3D(scale);
+            auto pActor = GetWorld()->SpawnActor<AActor>(m_spawnClass, location, rotation);
+            pActor->SetActorScale3D(scale);
 
-            auto pActor2 = UGameplayStatics::BeginDeferredActorSpawnFromClass(this, m_spawnClass, spawnTransform);
-            UGameplayStatics::FinishSpawningActor(pActor2, spawnTransform);
+            // auto pActor2 = UGameplayStatics::BeginDeferredActorSpawnFromClass(this, m_spawnClass, spawnTransform);
+            // UGameplayStatics::FinishSpawningActor(pActor2, spawnTransform);
         }
         if(m_spawned <= m_spawnCount)
         {
